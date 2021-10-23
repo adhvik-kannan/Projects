@@ -14,22 +14,24 @@ public class Practice3 {
 		String line, token;
 		StringTokenizer st;
 		int count = 0, pos1, pos2;
-		while(s.hasNextLine()) {
+		while (s.hasNextLine()) {
 			line = s.nextLine();
 
 			st = new StringTokenizer(line, " ,;\".:"); // "
-			while(st.hasMoreTokens()) {
+			while (st.hasMoreTokens()) {
 				token = st.nextToken();
 				pos1 = token.indexOf('s');
-				if(pos1<0) continue;
-				
-				pos2= token.indexOf('p', pos1+1);
-				if(pos2<0) continue;
-				
- 				System.out.println(token);
+				if (pos1 < 0)
+					continue;
+
+				pos2 = token.indexOf('p', pos1 + 1);
+				if (pos2 < 0)
+					continue;
+
+				System.out.println(token);
 				count++;
 			}
-			//System.out.println(line);
+			// System.out.println(line);
 		}
 		System.out.println("count=" + count);
 

@@ -3,9 +3,9 @@ package jrJava.linkedList3;
 public class Test3 {
 
 	public static void main(String[] args) {
-		
+
 		LinkedList list = new LinkedList();
-		
+
 		list.insert(5, 5.0);
 		list.insert(9, 9.0);
 		list.insert(4, 4.0);
@@ -14,14 +14,14 @@ public class Test3 {
 		list.insert(7, 7.0);
 		list.insert(3, 3.0);
 		list.insert(6, 6.0);
-		
+
 		MyIterator iter1 = new MyIterator(list);
 		MyIterator iter2 = new MyIterator(list);
-		
+
 		AdditionOp additionOp = new AdditionOp(iter1);
 		RemovalOp removalOp = new RemovalOp(iter2, 4);
-		
-		for(int i=0; i<20; i++) {
+
+		for (int i = 0; i < 20; i++) {
 			additionOp.process();
 			removalOp.process();
 		}

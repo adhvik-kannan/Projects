@@ -9,35 +9,34 @@ public class StateTree {
 
 	public static final String DATA_FILE_PATH = "jrJava/tree3_caseStudy/stateData.txt";
 	private static DrawableTree<State> tree;
-	
+
 	public static void main(String[] args) {
 		tree = new DrawableTree<State>();
-		
+
 		try {
 			loadData();
-		}
-		catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		tree.draw(4000, 3000);
-	//	tree.traverseTopToBottom();
+		// tree.traverseTopToBottom();
 
 	}
-	
+
 	private static void loadData() throws FileNotFoundException {
 		Scanner s = new Scanner(new File(DATA_FILE_PATH));
 		s.nextLine(); // Waste the first line.
-		
+
 		StringTokenizer st;
 		String line;
 		String name, abbr, capital;
 		int population, area, yy, mm, dd;
-		while(s.hasNextLine()) {
+		while (s.hasNextLine()) {
 			line = s.nextLine();
-			
+
 			st = new StringTokenizer(line, " /");
-			
+
 			name = st.nextToken();
 			abbr = st.nextToken();
 			capital = st.nextToken();
@@ -46,7 +45,7 @@ public class StateTree {
 			yy = Integer.parseInt(st.nextToken());
 			mm = Integer.parseInt(st.nextToken());
 			dd = Integer.parseInt(st.nextToken());
-			
+
 			tree.insert(new State(name, abbr, capital, population, area, yy, mm, dd));
 		}
 	}

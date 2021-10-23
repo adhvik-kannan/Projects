@@ -1,6 +1,7 @@
 package jrJava.type_advanced;
 
-public class E extends B{
+public class E extends B {
 
-	public void mE() {}
+	public void mE() {
+	}
 }

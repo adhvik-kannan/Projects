@@ -6,21 +6,20 @@ import java.util.Scanner;
 public class MessageReceiver implements Runnable {
 
 	private Scanner scanner;
-	
+
 	public MessageReceiver(InputStream is) {
 		scanner = new Scanner(is);
 	}
-	
-	
+
 	public void run() {
 		receive();
 	}
-	
+
 	public void receive() {
 		String msg;
-		while(true) {
+		while (true) {
 			msg = scanner.nextLine();
-			System.out.println(msg); 
+			System.out.println(msg);
 		}
 	}
 }

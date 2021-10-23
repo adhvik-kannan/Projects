@@ -7,19 +7,19 @@ public class MyIterator implements Iterator {
 	private LinkedList list;
 	private Link current; // null, one before the 'first'.
 	private Link previous;
-	
-	
+
 	public MyIterator(LinkedList list) {
 		this.list = list;
 	}
-	
+
 	public boolean hasNext() {
-		if(current==null) return list.first!=null;
-		return current.next!=null;
+		if (current == null)
+			return list.first != null;
+		return current.next != null;
 	}
-	
+
 	public Object next() {
-		if(current==null) {
+		if (current == null) {
 			current = list.first;
 			return current.obj;
 		}
@@ -27,11 +27,12 @@ public class MyIterator implements Iterator {
 		current = current.next;
 		return current.obj;
 	}
-	
+
 	public void remove() {
-		if(current==null) throw new UnsupportedOperationException("removal-op");
-		
-		if(previous==null) {
+		if (current == null)
+			throw new UnsupportedOperationException("removal-op");
+
+		if (previous == null) {
 			list.first = list.first.next;
 			current = null;
 			return;

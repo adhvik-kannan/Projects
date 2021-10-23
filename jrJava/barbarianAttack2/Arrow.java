@@ -19,6 +19,7 @@ public class Arrow {
 		eWidth = eImage.getWidth(null);
 		eHeight = eImage.getHeight(null);
 	}
+
 	public Arrow(double x, double y, double vx, double vy, double length) {
 		super();
 		this.x = x;
@@ -28,38 +29,37 @@ public class Arrow {
 		this.length = length;
 	}
 
-	public double getX() { return x; }
-	public double getY() { return y; }
+	public double getX() {
+		return x;
+	}
+
+	public double getY() {
+		return y;
+	}
 
 	public void move() {
-		for(int i=0; i<10; i++) {
-			x += vx/10;
-			y += vy/10;
-			vy += gravity/10;
+		for (int i = 0; i < 10; i++) {
+			x += vx / 10;
+			y += vy / 10;
+			vy += gravity / 10;
 
-			if(BarbarianManager.isHit(this)) {
+			if (BarbarianManager.isHit(this)) {
 				isCollided = true;
 			}
-			//check collision occurs. break out of for-loop.
-			//if(x<100 || y>500) ArrowManager.remove(this);
+			// check collision occurs. break out of for-loop.
+			// if(x<100 || y>500) ArrowManager.remove(this);
 		}
 	}
 
-
 	public void draw(Graphics2D g) {
 		g.setColor(Color.BLACK);
-		double hyp = Math.sqrt(vx*vx + vy*vy);
-		g.drawLine((int)x, (int)y, (int)(x + length*vx/hyp), (int)(y + length*vy/hyp));
-		
-		if(isCollided) {
-			g.drawImage(eImage, (int)x-eWidth/2, (int)y-eHeight/2, null); 
+		double hyp = Math.sqrt(vx * vx + vy * vy);
+		g.drawLine((int) x, (int) y, (int) (x + length * vx / hyp), (int) (y + length * vy / hyp));
+
+		if (isCollided) {
+			g.drawImage(eImage, (int) x - eWidth / 2, (int) y - eHeight / 2, null);
 			ArrowManager.remove(this);
 		}
 	}
 
 }
-
-
-
-
-

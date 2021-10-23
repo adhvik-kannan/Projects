@@ -1,4 +1,4 @@
-	package jrJava.GUI_usingMouseListener;
+package jrJava.GUI_usingMouseListener;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -8,12 +8,11 @@ import java.awt.event.MouseListener;
 
 import javax.swing.*;
 
-public class MyGUI /*implements KeyListener */{
+public class MyGUI /* implements KeyListener */ {
 
 	private static JFrame frame;
 	private static MyPanel panel;
 	private static MyButton button;
-
 
 	public MyGUI() {
 		frame = new JFrame("Extending component");
@@ -29,7 +28,6 @@ public class MyGUI /*implements KeyListener */{
 		button.setBounds(250, 100, 150, 150);
 		panel.add(button);
 
-
 		frame.setVisible(true);
 	}
 
@@ -38,12 +36,14 @@ public class MyGUI /*implements KeyListener */{
 
 		try {
 			Thread.sleep(1000);
-		} catch (InterruptedException e) { }
+		} catch (InterruptedException e) {
+		}
 
-		while(true) {
+		while (true) {
 			try {
 				Thread.sleep(50);
-			} catch (InterruptedException e) {}
+			} catch (InterruptedException e) {
+			}
 			panel.moveCircle();
 			button.moveCircle();
 			panel.repaint();
@@ -51,10 +51,3 @@ public class MyGUI /*implements KeyListener */{
 	}
 
 }
-
-
-
-
-
-
-

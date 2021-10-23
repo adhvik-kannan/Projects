@@ -17,25 +17,25 @@ public class Coordinator {
 		DrawingBoard board = new DrawingBoard(200, 0, 600, 700);
 		Graphics g = board.getCanvas();
 		Timer timer = new Timer();
-		
+
 		ship = new Ship(200, 600);
 		alien = new Alien(300, 0, Color.GREEN, Color.BLACK, 2, 5);
-		
-		for(int i=1; i<=200; i++) {
+
+		for (int i = 1; i <= 200; i++) {
 
 			board.clear();
-			
+
 			ship.move();
 			ship.draw(g);
-			
+
 			alien.move();
 			alien.draw(g);
 
-			if(missile!=null) {
+			if (missile != null) {
 				missile.move();
 				missile.draw(g);
 			}
-			if(torpedo!=null) {
+			if (torpedo != null) {
 				torpedo.move();
 				torpedo.draw(g);
 			}

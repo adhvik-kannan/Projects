@@ -6,11 +6,10 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-
 public class Maze {
 
 	private BufferedImage maze;
-	
+
 	public Maze() {
 		try {
 			maze = ImageIO.read(new File("jrJava/maze_imagesAndSounds/maze.png"));
@@ -18,29 +17,16 @@ public class Maze {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void draw(Graphics g) {
 		g.drawImage(maze, 0, 0, null);
 	}
-	
-	
+
 	public boolean hitWall(int x, int y) {
-		
-		int alpha = (maze.getRGB(x, y)>>24) & 0xFF;
-		
-		return alpha>100;
+
+		int alpha = (maze.getRGB(x, y) >> 24) & 0xFF;
+
+		return alpha > 100;
 	}
-	
+
 }
-
-
-
-
-
-
-
-
-
-
-
-

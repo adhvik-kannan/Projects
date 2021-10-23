@@ -8,16 +8,17 @@ public class RemovalOp {
 
 	private MyIterator iter;
 	private int removeId;
-	
+
 	public RemovalOp(MyIterator iter, int removeId) {
 		this.iter = iter;
 		this.removeId = removeId;
 	}
-	
+
 	public void process() {
-		if(iter.hasNext()) {
+		if (iter.hasNext()) {
 			Link each = (Link) iter.next();
-			if(each.id==removeId) iter.remove();
+			if (each.id == removeId)
+				iter.remove();
 		}
 	}
 }

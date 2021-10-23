@@ -8,19 +8,18 @@ public class Practice2 {
 
 		System.out.println(calculateSumForUser() + calculateSumForUser());
 	}
-	
-	
+
 	public static double calculateSumForUser() {
 		Scanner scanner = new Scanner(System.in);
 		double sum = 0.0;
 		double entered = 0.0;
-		
-		while(entered>=0) {
+
+		while (entered >= 0) {
 			sum += entered;
 			System.out.println("Enter a number (To stop, enter '-1').");
 			entered = scanner.nextDouble();
 		}
-		
+
 		System.out.println("sum = " + sum);
 		return sum;
 	}

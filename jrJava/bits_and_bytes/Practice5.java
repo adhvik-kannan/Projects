@@ -14,8 +14,9 @@ public class Practice5 {
 
 	public static void printBinary(int value) {
 		String binaryString = Integer.toBinaryString(value);
-		for(int i=0; i<32-binaryString.length(); i++) System.out.print('0');
+		for (int i = 0; i < 32 - binaryString.length(); i++)
+			System.out.print('0');
 		System.out.println(binaryString);
 	}
-	
+
 }

@@ -6,14 +6,13 @@ public class AnimalTrainer {
 		animal.move();
 		animal.eat();
 	}
-	
-	
+
 	public void train(Animal[] animals) {
-		 
-		for(int i=0; i<animals.length; i++) {
+
+		for (int i = 0; i < animals.length; i++) {
 			animals[i].move();
 			animals[i].eat();
 		}
 	}
-	
+
 }

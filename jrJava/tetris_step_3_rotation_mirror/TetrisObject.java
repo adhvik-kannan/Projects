@@ -11,77 +11,77 @@ public abstract class TetrisObject implements KeyListener {
 	protected int x;
 	protected int y;
 	protected Color color;
-	
+
 	public TetrisObject(int x, int y, Color color) {
 		this.x = x;
 		this.y = y;
 		this.color = color;
-		
+
 		formShape();
 	}
-	
+
 	protected abstract void formShape();
-	
+
 	protected void updateBlocks() {
-		for(int i=0; i<blocks.length; i++) {
-			blocks[i].updatePosition(x, y); 
+		for (int i = 0; i < blocks.length; i++) {
+			blocks[i].updatePosition(x, y);
 		}
 	}
-	
-	
-	public void moveDown() { 
+
+	public void moveDown() {
 		y += Block.SIZE;
-		if(y>660) y = 660;
+		if (y > 660)
+			y = 660;
 		updateBlocks();
 	}
-	
-	private void shiftLeft() { 
+
+	private void shiftLeft() {
 		x -= Block.SIZE;
 		updateBlocks();
 	}
-	
-	private void shiftRight() { 
+
+	private void shiftRight() {
 		x += Block.SIZE;
 		updateBlocks();
 	}
-	
+
 	private void rotate() {
-		for(int i=0; i<blocks.length; i++) {
+		for (int i = 0; i < blocks.length; i++) {
 			blocks[i].rotate();
 		}
 		updateBlocks();
 	}
-	
+
 	private void mirror() {
-		for(int i=0; i<blocks.length; i++) {
+		for (int i = 0; i < blocks.length; i++) {
 			blocks[i].mirror();
 		}
 		updateBlocks();
 	}
-	
+
 	public void draw(Graphics g) {
-		for(int i=0; i<blocks.length; i++) {
-			blocks[i].draw(g); 
+		for (int i = 0; i < blocks.length; i++) {
+			blocks[i].draw(g);
 		}
 	}
-	
-	
-	public void keyPressed(KeyEvent e) { 
+
+	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
-		
-		if(keyCode==KeyEvent.VK_LEFT) shiftLeft();
-		else if(keyCode==KeyEvent.VK_RIGHT) shiftRight();
-		else if(keyCode==KeyEvent.VK_R) rotate(); 
-		else if(keyCode==KeyEvent.VK_M) mirror(); 
+
+		if (keyCode == KeyEvent.VK_LEFT)
+			shiftLeft();
+		else if (keyCode == KeyEvent.VK_RIGHT)
+			shiftRight();
+		else if (keyCode == KeyEvent.VK_R)
+			rotate();
+		else if (keyCode == KeyEvent.VK_M)
+			mirror();
 	}
-	
-	
-	public void keyTyped(KeyEvent e) { }
-	public void keyReleased(KeyEvent e) { }
-	
+
+	public void keyTyped(KeyEvent e) {
+	}
+
+	public void keyReleased(KeyEvent e) {
+	}
+
 }
-
-
-
-
- 

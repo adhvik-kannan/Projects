@@ -8,8 +8,7 @@ public class Edge {
 	private String roadName;
 	private double distance;
 	private String compassDir;
-	
-	
+
 	public Edge(String start, String end, String roadName, double distance, String compassDir) {
 		this.start = start;
 		this.end = end;
@@ -18,7 +17,6 @@ public class Edge {
 		this.compassDir = compassDir;
 	}
 
-	
 	public String getStart() {
 		return start;
 	}
@@ -46,5 +44,5 @@ public class Edge {
 	public void setCompassDir(String compassDir) {
 		this.compassDir = compassDir;
 	}
-	
+
 }

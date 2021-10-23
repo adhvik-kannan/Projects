@@ -7,8 +7,7 @@ public class Arrow {
 
 	private double x, y, vx, vy, length;
 	private static double gravity = 0.4;
-	
-	
+
 	public Arrow(double x, double y, double vx, double vy, double length) {
 		super();
 		this.x = x;
@@ -17,28 +16,28 @@ public class Arrow {
 		this.vy = vy;
 		this.length = length;
 	}
-	
-	public double getX() { return x; }
-	public double getY() { return y; }
-	
+
+	public double getX() {
+		return x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
 	public void move() {
 		x += vx;
 		y += vy;
 		vy += gravity;
-		
-		if(x<100 || y>500) ArrowManager.remove(this);
+
+		if (x < 100 || y > 500)
+			ArrowManager.remove(this);
 	}
-	
-	
+
 	public void draw(Graphics2D g) {
 		g.setColor(Color.BLACK);
-		double hyp = Math.sqrt(vx*vx + vy*vy);
-		g.drawLine((int)x, (int)y, (int)(x + length*vx/hyp), (int)(y + length*vy/hyp));
+		double hyp = Math.sqrt(vx * vx + vy * vy);
+		g.drawLine((int) x, (int) y, (int) (x + length * vx / hyp), (int) (y + length * vy / hyp));
 	}
-	
+
 }
-
-
-
-
-

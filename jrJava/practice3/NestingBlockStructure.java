@@ -15,21 +15,18 @@ public class NestingBlockStructure {
 		System.out.println("Enter the y-coordinate of the point in integer.");
 		y = scanner.nextInt();
 
-		if(x>=0) {
+		if (x >= 0) {
 
-			if(y>=0) {
+			if (y >= 0) {
 				System.out.println("Your point is in Q1.");
-			}
-			else {
+			} else {
 				System.out.println("Your point is in Q4.");
 			}
-		}
-		else {
+		} else {
 
-			if(y>=0) {
+			if (y >= 0) {
 				System.out.println("Your point is in Q2.");
-			}
-			else {
+			} else {
 				System.out.println("Your point is in Q3.");
 			}
 

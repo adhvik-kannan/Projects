@@ -14,7 +14,7 @@ public class Practice4 {
 		String line, token;
 		StringTokenizer st;
 		int count = 0;
-		while(s.hasNextLine()) {
+		while (s.hasNextLine()) {
 			line = s.nextLine();
 			line = line.replace("Harry", "Adhvik");
 			System.out.println(line);

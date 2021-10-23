@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class GameBoard extends JPanel implements MouseListener {
-	
+
 	public static final int NUM_OF_CARDS = 42;
 	public static final int NUM_OF_COLS = 7;
 	public static final int MARGIN = 20;
@@ -29,14 +29,12 @@ public class GameBoard extends JPanel implements MouseListener {
 		this.addMouseListener(this);
 
 		cards = new Card[NUM_OF_CARDS];
-		for(int i=0; i<cards.length; i++) {
-			cards[i] = new Card(i/2, MARGIN + i%NUM_OF_COLS*Card.SIZE, MARGIN + i/NUM_OF_COLS*Card.SIZE);
+		for (int i = 0; i < cards.length; i++) {
+			cards[i] = new Card(i / 2, MARGIN + i % NUM_OF_COLS * Card.SIZE, MARGIN + i / NUM_OF_COLS * Card.SIZE);
 		}
 
 		frame.setVisible(true);
 	}
-
-
 
 	protected void paintComponent(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
@@ -46,32 +44,44 @@ public class GameBoard extends JPanel implements MouseListener {
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, getWidth(), getHeight());
 
-		for(int i=0; i<cards.length; i++) cards[i].draw(g);
+		for (int i = 0; i < cards.length; i++)
+			cards[i].draw(g);
 	}
-	
+
 	public void showAll() {
-		for(int i=0; i<cards.length; i++) cards[i].show();
+		for (int i = 0; i < cards.length; i++)
+			cards[i].show();
 	}
-	public void hideAll() { 
-		for(int i=0; i<cards.length; i++) cards[i].hide();
+
+	public void hideAll() {
+		for (int i = 0; i < cards.length; i++)
+			cards[i].hide();
 	}
-	
-	public void mousePressed(MouseEvent e) { 
+
+	public void mousePressed(MouseEvent e) {
 		int mx = e.getX();
 		int my = e.getY();
-		
-		for(int i=0; i<cards.length; i++) {
-			if(cards[i].isSelected(mx, my)) {
+
+		for (int i = 0; i < cards.length; i++) {
+			if (cards[i].isSelected(mx, my)) {
 				cards[i].show();
-				repaint(); //this.repaint();
+				repaint(); // this.repaint();
 				break;
 			}
 		}
 	}
-	public void mouseClicked(MouseEvent e) { }
-	public void mouseReleased(MouseEvent e) { }
-	public void mouseEntered(MouseEvent e) { }
-	public void mouseExited(MouseEvent e) { }
+
+	public void mouseClicked(MouseEvent e) {
+	}
+
+	public void mouseReleased(MouseEvent e) {
+	}
+
+	public void mouseEntered(MouseEvent e) {
+	}
+
+	public void mouseExited(MouseEvent e) {
+	}
 
 	public static void main(String[] args) {
 		GameBoard gameBoard = new GameBoard();
@@ -79,22 +89,19 @@ public class GameBoard extends JPanel implements MouseListener {
 		gameBoard.repaint();
 		try {
 			Thread.sleep(3000);
-		} catch (InterruptedException e1) { }
+		} catch (InterruptedException e1) {
+		}
 		gameBoard.hideAll();
 		gameBoard.repaint();
-		
-		while(true) {
+
+		while (true) {
 
 			try {
 				Thread.sleep(50);
-			} catch (InterruptedException e) { }
+			} catch (InterruptedException e) {
+			}
 		}
 
 	}
 
-
 }
-
-
-
-

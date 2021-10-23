@@ -18,11 +18,12 @@ public class Practice5 {
 		StringTokenizer st;
 		StringBuilder sb;
 		String fName, lName, id, title, empYear, salary, dobYY, dobMM, dobDD, gender;
-		
-		while(s.hasNextLine()) {
+
+		while (s.hasNextLine()) {
 			line = s.nextLine();
-			if(line.trim().length()==0) continue;
-			
+			if (line.trim().length() == 0)
+				continue;
+
 			st = new StringTokenizer(line, " ");
 			fName = st.nextToken();
 			lName = st.nextToken();
@@ -34,10 +35,11 @@ public class Practice5 {
 			dobMM = st.nextToken();
 			dobDD = st.nextToken();
 			gender = st.nextToken();
-			
+
 			int dobYYNumber = Integer.parseInt(dobYY);
-			if(dobYYNumber<1980) continue;
-			
+			if (dobYYNumber < 1980)
+				continue;
+
 			sb = new StringBuilder();
 			sb.append(fName);
 			sb.append(" ");
@@ -59,11 +61,11 @@ public class Practice5 {
 			sb.append(" ");
 			sb.append(gender);
 			sb.append(" ");
-			
+
 			pw.println(sb.toString());
 		}
-		
-		pw.flush();	
+
+		pw.flush();
 		pw.close();
 	}
 

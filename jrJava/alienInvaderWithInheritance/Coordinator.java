@@ -10,52 +10,44 @@ public class Coordinator {
 
 	public static boolean gameOver;
 	public static String path = "jrJava/alienInvader/imagesAndSounds/";
-	
-	
+
 	public static void main(String[] args) {
-		
+
 		DrawingBoard board = new DrawingBoard(200, 0, 600, 700);
 		Graphics g = board.getCanvas();
 		Timer timer = new Timer();
-		
+
 		Ship ship = new Ship(200, 600);
-		
+
 		board.addMouseMotionListener(ship);
-		board.getJFrame().addKeyListener(ship); 
-		
-		board.setBackgroundImage(Coordinator.path + "bg.png"); 
+		board.getJFrame().addKeyListener(ship);
+
+		board.setBackgroundImage(Coordinator.path + "bg.png");
 		SoundPlayer bgSound = new SoundPlayer(path + "bgMusic.wav");
 		bgSound.playLoop();
-		
-		while(!gameOver) {
-		
+
+		while (!gameOver) {
+
 			board.clear();
-			
+
 			ship.draw(g);
-			
+
 			AlienManager.create();
-			
+
 			MissileManager.move(ship);
 			MissileManager.draw(g);
-			
+
 			AlienManager.move(ship);
 			AlienManager.draw(g);
-			
+
 			TorpedoManager.move();
-			TorpedoManager.draw(g);			
-			
+			TorpedoManager.draw(g);
+
 			board.repaint();
-			timer.pause(50); 
+			timer.pause(50);
 		}
-		
-		bgSound.stop(); 
+
+		bgSound.stop();
 	}
 
-	
 }
-
-
-
-
-
-

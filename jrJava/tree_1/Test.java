@@ -3,9 +3,9 @@ package jrJava.tree_1;
 public class Test {
 
 	public static void main(String[] args) {
-		
+
 		Tree<Integer> tree = new Tree<Integer>();
-		
+
 		tree.insert(10);
 		tree.insert(5);
 		tree.insert(17);
@@ -21,9 +21,9 @@ public class Test {
 		tree.insert(15);
 		tree.insert(18);
 		tree.insert(20);
-		
+
 		tree.traverseTopToBottom();
-		
+
 		System.out.println(tree.sum());
 	}
 

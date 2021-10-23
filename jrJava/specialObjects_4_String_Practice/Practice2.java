@@ -14,18 +14,19 @@ public class Practice2 {
 		String line, token;
 		StringTokenizer st;
 		int count = 0;
-		while(s.hasNextLine()) {
+		while (s.hasNextLine()) {
 			line = s.nextLine();
 
 			st = new StringTokenizer(line, " ,;\".:"); // "
-			while(st.hasMoreTokens()) {
+			while (st.hasMoreTokens()) {
 				token = st.nextToken();
-				//if(token.length()<10) continue;
-				if(token.indexOf("pp")<0) continue; 
+				// if(token.length()<10) continue;
+				if (token.indexOf("pp") < 0)
+					continue;
 				System.out.println(token);
 				count++;
 			}
-			//System.out.println(line);
+			// System.out.println(line);
 		}
 		System.out.println("count=" + count);
 

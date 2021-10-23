@@ -8,15 +8,17 @@ public class MyIterator {
 	public MyIterator(LinkedList list) {
 		this.list = list;
 	}
+
 	public boolean hasNext() {
-		if(current==null) return list.first!=null;
-		return current.next!=null;
+		if (current == null)
+			return list.first != null;
+		return current.next != null;
 	}
 
 	public Link next() {
-		if(current==null) {
+		if (current == null) {
 			current = list.first;
-			return current;	
+			return current;
 		}
 		previous = current;
 		current = current.next;
@@ -25,7 +27,7 @@ public class MyIterator {
 
 	public void remove() {
 
-		if(previous==null) {
+		if (previous == null) {
 			list.first = list.first.next;
 			current = null;
 			return;

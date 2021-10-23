@@ -11,12 +11,12 @@ import java.util.Scanner;
 public class SimpleClient {
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
-	
+
 		Socket s = new Socket("192.168.1.2", 5454);
 
 		OutputStream os = s.getOutputStream();
 		PrintWriter pw = new PrintWriter(os);
-		
+
 		pw.println("I love you guys, From sir.");
 		pw.flush();
 		pw.close();

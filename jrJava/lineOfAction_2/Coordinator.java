@@ -14,16 +14,16 @@ public class Coordinator {
 		board.addMouseListener(gameBoard);
 		board.addMouseMotionListener(gameBoard);
 
-		while(true) {
+		while (true) {
 			board.clear();
 			gameBoard.draw();
 			board.repaint();
-			
+
 			try {
 				Thread.sleep(15);
-			} catch (InterruptedException e) {}
+			} catch (InterruptedException e) {
+			}
 		}
 	}
-
 
 }

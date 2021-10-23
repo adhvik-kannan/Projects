@@ -2,14 +2,12 @@ package jrJava.tetris_step_1_TetrisObject;
 
 import java.awt.Color;
 
-
-public class LShape extends TetrisObject{
+public class LShape extends TetrisObject {
 
 	public LShape(int x, int y, Color color) {
 		super(x, y, color);
 	}
 
-	
 	protected void formShape() {
 		blocks = new Block[4];
 		blocks[0] = new Block(-1, -1, color);
@@ -18,5 +16,4 @@ public class LShape extends TetrisObject{
 		blocks[3] = new Block(1, 0, color);
 	}
 
-	
 }

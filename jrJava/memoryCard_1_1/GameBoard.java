@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class GameBoard extends JPanel {
-	
+
 	public static final int NUM_OF_CARDS = 42;
 	public static final int NUM_OF_COLS = 7;
 	public static final int MARGIN = 20;
@@ -26,15 +26,14 @@ public class GameBoard extends JPanel {
 		frame.add(this);
 
 		cards = new Card[NUM_OF_CARDS];
-		for(int i=0; i<cards.length; i++) {
-			cards[i] = new Card(i/2, MARGIN + i%NUM_OF_COLS*Card.SIZE, MARGIN + i/NUM_OF_COLS*Card.SIZE);
-			if(i%2==0) cards[i].show();
+		for (int i = 0; i < cards.length; i++) {
+			cards[i] = new Card(i / 2, MARGIN + i % NUM_OF_COLS * Card.SIZE, MARGIN + i / NUM_OF_COLS * Card.SIZE);
+			if (i % 2 == 0)
+				cards[i].show();
 		}
 
 		frame.setVisible(true);
 	}
-
-
 
 	protected void paintComponent(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
@@ -44,7 +43,7 @@ public class GameBoard extends JPanel {
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, getWidth(), getHeight());
 
-		for(int i=0; i<cards.length; i++) {
+		for (int i = 0; i < cards.length; i++) {
 			cards[i].draw(g);
 		}
 	}
@@ -54,21 +53,17 @@ public class GameBoard extends JPanel {
 
 		try {
 			Thread.sleep(1000);
-		} catch (InterruptedException e) { }
+		} catch (InterruptedException e) {
+		}
 
-
-		while(true) {
+		while (true) {
 
 			try {
 				Thread.sleep(50);
-			} catch (InterruptedException e) { }
+			} catch (InterruptedException e) {
+			}
 		}
 
 	}
 
-
 }
-
-
-
-

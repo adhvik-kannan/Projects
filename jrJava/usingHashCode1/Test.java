@@ -15,12 +15,12 @@ public class Test {
 		students[s3.hashCode()] = s3;
 		students[s4.hashCode()] = s4;
 		students[s5.hashCode()] = s5;
-		
+
 		int id = 102;
 		int hashCode = id - 101;
 		Student found1 = students[hashCode];
 		System.out.println(found1);
-		
+
 		Student probe = new Student(102, "");
 		Student found2 = students[probe.hashCode()];
 		System.out.println(found2);

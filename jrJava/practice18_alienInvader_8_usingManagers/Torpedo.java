@@ -12,8 +12,7 @@ public class Torpedo {
 	public boolean collided;
 	public static Color explosionColor;
 	public static int explosionRadius;
-	
-	
+
 	static {
 		width = 4;
 		height = 12;
@@ -21,42 +20,34 @@ public class Torpedo {
 		explosionColor = Color.ORANGE;
 		explosionRadius = 40;
 	}
-	
+
 	public Torpedo(int x, int y, int vy) {
 		this.x = x;
 		this.y = y;
 		this.vy = vy;
-		if(this.vy>0) this.vy = -this.vy;
+		if (this.vy > 0)
+			this.vy = -this.vy;
 	}
-	
+
 	public void move() {
 		y += vy;
-		
-		if(y<50) TorpedoManager.remove(this); 
-		
-		collided = AlienManager.isHit(this) ||  MissileManager.isHit(this);
+
+		if (y < 50)
+			TorpedoManager.remove(this);
+
+		collided = AlienManager.isHit(this) || MissileManager.isHit(this);
 	}
-	
+
 	public void draw(Graphics g) {
 		g.setColor(color);
-		g.drawRect(x-width/2, y, width, height); 
-		
-		if(collided) {
+		g.drawRect(x - width / 2, y, width, height);
+
+		if (collided) {
 			g.setColor(explosionColor);
-			g.drawOval(x-explosionRadius, y-explosionRadius, 2*explosionRadius, 2*explosionRadius);
-			
-			TorpedoManager.remove(this); 
+			g.drawOval(x - explosionRadius, y - explosionRadius, 2 * explosionRadius, 2 * explosionRadius);
+
+			TorpedoManager.remove(this);
 		}
 	}
-	 
+
 }
-
-
-
-
-
-
-
-
-
-

@@ -17,17 +17,17 @@ public class Basic5 {
 		int i, j, color1, color2;
 		int a, r, g, b;
 		double w;
-		for(i=0; i<bImage1.getWidth(); i++) {
-			for(j=0; j<bImage1.getHeight(); j++) {
+		for (i = 0; i < bImage1.getWidth(); i++) {
+			for (j = 0; j < bImage1.getHeight(); j++) {
 				color1 = bImage1.getRGB(i, j);
 				color2 = bImage2.getRGB(i, j);
-				
-				w = (double)i/(bImage1.getWidth()-1);
-				a =(int)(getAlpha(color1)*w + getAlpha(color2)*(1-w));
-				r = (int)(getRed(color1)*w + getRed(color2)*(1-w));
-				g = (int)(getGreen(color1)*w + getGreen(color2)*(1-w));
-				b = (int)(getBlue(color1)*w + getBlue(color2)*(1-w));
-				
+
+				w = (double) i / (bImage1.getWidth() - 1);
+				a = (int) (getAlpha(color1) * w + getAlpha(color2) * (1 - w));
+				r = (int) (getRed(color1) * w + getRed(color2) * (1 - w));
+				g = (int) (getGreen(color1) * w + getGreen(color2) * (1 - w));
+				b = (int) (getBlue(color1) * w + getBlue(color2) * (1 - w));
+
 				empty.setRGB(i, j, getColor(a, r, g, b));
 			}
 		}
@@ -37,18 +37,19 @@ public class Basic5 {
 	}
 
 	private static int getColor(int alpha, int red, int green, int blue) {
-		return (alpha<<24) | (red<<16) | (green<<8) | blue;
+		return (alpha << 24) | (red << 16) | (green << 8) | blue;
 	}
+
 	private static int getAlpha(int color) {
-		return (color>>24) & 0xff;
+		return (color >> 24) & 0xff;
 	}
 
 	private static int getRed(int color) {
-		return (color>>16) & 0xff;
+		return (color >> 16) & 0xff;
 	}
 
 	private static int getGreen(int color) {
-		return (color>>8) & 0xff;
+		return (color >> 8) & 0xff;
 	}
 
 	private static int getBlue(int color) {

@@ -1,12 +1,10 @@
-	 package jrJava.practice18_alienInvader_9_usingImagesAndSounds;
+package jrJava.practice18_alienInvader_9_usingImagesAndSounds;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
-
-
 
 public class Missile {
 
@@ -17,8 +15,7 @@ public class Missile {
 	public boolean collided;
 	public static Color explosionColor;
 	public static int explosionRadius;
-	
-	
+
 	static {
 		image = new ImageIcon(Coordinator.path + "missile.png").getImage();
 		width = image.getWidth(null);
@@ -26,50 +23,41 @@ public class Missile {
 		explosionColor = Color.RED;
 		explosionRadius = 80;
 	}
-	
+
 	public Missile(int x, int y, int vy) {
 		this.x = x;
 		this.y = y;
 		this.vy = vy;
 	}
-	
-	
+
 	public void move(Ship ship) {
 		y += vy;
-		
-		if(y>690) MissileManager.remove(this);
-		
+
+		if (y > 690)
+			MissileManager.remove(this);
+
 		collided = ship.isHit(this);
 	}
-	
-	
+
 	public boolean isHit(Torpedo torpedo) {
-		
-		if(torpedo.x>=x-width/2-Torpedo.width/2 && 
-		   torpedo.x<=x+width/2+Torpedo.width/2 &&
-		   torpedo.y>=y-height-Torpedo.height	&& 
-		   torpedo.y<=y) {
-			
+
+		if (torpedo.x >= x - width / 2 - Torpedo.width / 2 && torpedo.x <= x + width / 2 + Torpedo.width / 2
+				&& torpedo.y >= y - height - Torpedo.height && torpedo.y <= y) {
+
 			MissileManager.remove(this);
 			return true;
 		}
-		
+
 		return false;
 	}
-	
-	
+
 	public void draw(Graphics g) {
-		//g.drawRect(x-width/2, y-height, width, height); 
-		g.drawImage(image, x-width/2, y-height, null);
-		if(collided) { 
+		// g.drawRect(x-width/2, y-height, width, height);
+		g.drawImage(image, x - width / 2, y - height, null);
+		if (collided) {
 			g.setColor(explosionColor);
-			g.drawOval(x-explosionRadius, y-explosionRadius, 2*explosionRadius, 2*explosionRadius);
+			g.drawOval(x - explosionRadius, y - explosionRadius, 2 * explosionRadius, 2 * explosionRadius);
 			MissileManager.remove(this);
 		}
 	}
 }
-
-
-
-
-

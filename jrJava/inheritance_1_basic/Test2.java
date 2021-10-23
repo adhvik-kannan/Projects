@@ -4,18 +4,18 @@ public class Test2 {
 
 	public static void main(String[] args) {
 
-		 Object obj = new Object();
-		 Object obj2 = new Object();
-		 
-		 boolean isEqual = obj.equals(obj2);
-		 Class theClass = obj.getClass();
-		 int unique = obj.hashCode();
-		 String description = obj.toString();
-		 
-		 System.out.println(isEqual);
-		 System.out.println(theClass);
-		 System.out.println(unique);
-		 System.out.println(description);
+		Object obj = new Object();
+		Object obj2 = new Object();
+
+		boolean isEqual = obj.equals(obj2);
+		Class theClass = obj.getClass();
+		int unique = obj.hashCode();
+		String description = obj.toString();
+
+		System.out.println(isEqual);
+		System.out.println(theClass);
+		System.out.println(unique);
+		System.out.println(description);
 	}
 
 }

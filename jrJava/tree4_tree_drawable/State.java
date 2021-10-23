@@ -8,7 +8,7 @@ public class State implements Comparable<State> {
 	private int population;
 	private int area;
 	private int yy, mm, dd;
-	
+
 	public State(String name, String abbr, String capital, int population, int area, int yy, int mm, int dd) {
 		super();
 		this.name = name;
@@ -20,33 +20,41 @@ public class State implements Comparable<State> {
 		this.mm = mm;
 		this.dd = dd;
 	}
-	
+
 	public int compareTo(State o) {
-		if(yy>o.yy) return 1;
-		else if(yy<o.yy) return -1;
+		if (yy > o.yy)
+			return 1;
+		else if (yy < o.yy)
+			return -1;
 		else {
-			if(mm>o.mm) return 1;
-			else if(mm<o.mm) return -1;
+			if (mm > o.mm)
+				return 1;
+			else if (mm < o.mm)
+				return -1;
 			else {
-				if(dd>o.mm) return 1;
-				else if(dd<o.dd) return -1;
-				else return 0;
+				if (dd > o.mm)
+					return 1;
+				else if (dd < o.dd)
+					return -1;
+				else
+					return 0;
 			}
 		}
 	}
-	
+
 	public boolean equals(Object o) {
-		if(!(o instanceof State)) return false;
+		if (!(o instanceof State))
+			return false;
 		State other = (State) o;
 		return abbr.equals(other.abbr);
 	}
-	
+
 	public String toString() {
 		return abbr;
 	}
-	
+
 	public int hashCode() { // Talk about this later.
 		return abbr.hashCode();
 	}
-	
-}	
+
+}

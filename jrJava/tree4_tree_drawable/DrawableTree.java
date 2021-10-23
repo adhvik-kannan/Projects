@@ -25,7 +25,8 @@ public class DrawableTree<E extends Comparable<E>> extends Tree<E> {
 	public void draw(int width, int height) {
 		panelWidth = width;
 		panelHeight = height;
-		if(panel==null) panel = new DrawingPanel(width, height);
+		if (panel == null)
+			panel = new DrawingPanel(width, height);
 		panel.repaint();
 	}
 
@@ -50,33 +51,37 @@ public class DrawableTree<E extends Comparable<E>> extends Tree<E> {
 
 			frame.setVisible(true);
 		}
+
 		public void paintComponent(Graphics g) {
-			((Graphics2D)g).setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+			((Graphics2D) g).setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 			g.setColor(Color.WHITE);
 			g.fillRect(0, 0, panelWidth, panelHeight);
 			traverse(g, (DrawableNode<E>) root, null, true, 0);
 		}
+
 		private void traverse(Graphics g, DrawableNode<E> node, DrawableNode<E> parent, boolean isLeftMove, int level) {
-			if(node==null) return;
-			
+			if (node == null)
+				return;
+
 			// condition the 'node' so that it can do draw(g).
-			
-			if(level==0) {
-				node.x = panelWidth/2;
-				node.y = verticalGap/2;
+
+			if (level == 0) {
+				node.x = panelWidth / 2;
+				node.y = verticalGap / 2;
 				node.parent = null;
-			}
-			else{
-				if(isLeftMove) node.x = (int)(parent.x - panelWidth/4/Math.pow(2, level-1));
-				else node.x = (int)(parent.x + panelWidth/4/Math.pow(2, level-1));
+			} else {
+				if (isLeftMove)
+					node.x = (int) (parent.x - panelWidth / 4 / Math.pow(2, level - 1));
+				else
+					node.x = (int) (parent.x + panelWidth / 4 / Math.pow(2, level - 1));
 				node.y = parent.y + verticalGap;
 				node.parent = parent;
 			}
-			
-			traverse(g, (DrawableNode<E>) node.leftChild, node, true, level+1);
-			traverse(g, (DrawableNode<E>) node.rightChild, node, false, level+1);
+
+			traverse(g, (DrawableNode<E>) node.leftChild, node, true, level + 1);
+			traverse(g, (DrawableNode<E>) node.rightChild, node, false, level + 1);
 			node.draw(g);
-			
+
 		}
 
 	}
@@ -98,16 +103,16 @@ public class DrawableTree<E extends Comparable<E>> extends Tree<E> {
 
 		public void draw(Graphics g) {
 			// draw the line to its parent
-			if(parent!=null) {
+			if (parent != null) {
 				g.setColor(lineColor);
 				g.drawLine(x, y, parent.x, parent.y);
 			}
 			// draw the circular node and text
 			g.setColor(nodeColor);
-			g.fillOval(x-radius, y-radius, 2*radius, 2*radius);
+			g.fillOval(x - radius, y - radius, 2 * radius, 2 * radius);
 			g.setColor(textColor);
 			g.setFont(font);
-			g.drawString(obj.toString(), x-10, y+5);
+			g.drawString(obj.toString(), x - 10, y + 5);
 		}
 	}
 

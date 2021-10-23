@@ -13,18 +13,16 @@ public abstract class Alien {
 	protected boolean collided;
 	public static final Color explosionColor;
 	public static final int explosionRadius;
-	
+
 	protected int drawCount;
 	protected int drawCycle = 6;
-	
-	
+
 	static {
 		size = 40;
 		explosionColor = Color.GREEN;
 		explosionRadius = 100;
 	}
-	
-	
+
 	public Alien(int x, int y, Image image, Image imageAlt, int vx, int vy) {
 		super();
 		this.x = x;
@@ -34,35 +32,24 @@ public abstract class Alien {
 		this.vx = vx;
 		this.vy = vy;
 	}
-	
-	
+
 	public abstract void move(Ship ship);
-	
-	
+
 	public boolean isHit(Torpedo torpedo) {
-		
-		if(torpedo.getX()>=x-size/2-Torpedo.getWidth()/2 && 
-		   torpedo.getX()<=x+size/2+Torpedo.getWidth()/2 &&
-		   torpedo.getY()>=y-size-Torpedo.getHeight() && 
-		   torpedo.getY()<=y) {
-			
-			AlienManager.remove(this); 
+
+		if (torpedo.getX() >= x - size / 2 - Torpedo.getWidth() / 2
+				&& torpedo.getX() <= x + size / 2 + Torpedo.getWidth() / 2
+				&& torpedo.getY() >= y - size - Torpedo.getHeight() && torpedo.getY() <= y) {
+
+			AlienManager.remove(this);
 			return true;
 		}
-		
+
 		return false;
 	}
-	
-	
+
 	public abstract void draw(Graphics g);
-	
-	
+
 	public abstract void shootMissile();
-	
+
 }
-
-
-
-
-
-

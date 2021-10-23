@@ -3,9 +3,9 @@ package jrJava.HashingBasedDS;
 public class Test {
 
 	public static void main(String[] args) {
-		
+
 		HashSet<Thing> set = new HashSet<Thing>(5);
-		
+
 		set.add(new Thing(4, 2, 22222));
 		set.add(new Thing(1, 2, 22222));
 		set.add(new Thing(3, 3, 33333));
@@ -21,10 +21,10 @@ public class Test {
 		System.out.println();
 		set.add(new Thing(12, 12, 121212));
 		set.display();
-	
-		//Thing searchKey = new Thing(7);
-		//Thing found = set.get(searchKey);
-		//System.out.println(found);
+
+		// Thing searchKey = new Thing(7);
+		// Thing found = set.get(searchKey);
+		// System.out.println(found);
 	}
 
 }

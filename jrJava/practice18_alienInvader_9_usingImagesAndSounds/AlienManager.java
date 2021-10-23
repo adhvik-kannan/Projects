@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 public class AlienManager {
 
 	public static Alien[] aliens;
-	
+
 	public static Image[] images, imageAlts;
 
 	static {
@@ -23,58 +23,62 @@ public class AlienManager {
 		imageAlts[1] = new ImageIcon(Coordinator.path + "blueAlien_2.png").getImage();
 		imageAlts[2] = new ImageIcon(Coordinator.path + "greenAlien_2.png").getImage();
 	}
-	
+
 	public static void create() {
-		if(Math.random()>0.05) return;
-		
-		int x = (int)(Math.random()*601);
-		int vx = (int)(Math.random()*7) - 3;
-		int vy = (int)(Math.random()*5) + 3;
-		
-		int randomIndex = (int)(Math.random()*images.length);
+		if (Math.random() > 0.05)
+			return;
+
+		int x = (int) (Math.random() * 601);
+		int vx = (int) (Math.random() * 7) - 3;
+		int vy = (int) (Math.random() * 5) + 3;
+
+		int randomIndex = (int) (Math.random() * images.length);
 		Image image = images[randomIndex];
 		Image imageAlt = imageAlts[randomIndex];
-		
+
 		Alien alien = new Alien(x, 0, image, imageAlt, vx, vy);
-		
+
 		boolean shouldContinue = true;
-		for(int i=0; i<aliens.length && shouldContinue; i++) {
-			if(aliens[i]==null) {
+		for (int i = 0; i < aliens.length && shouldContinue; i++) {
+			if (aliens[i] == null) {
 				aliens[i] = alien;
 				shouldContinue = false;
 			}
 		}
 	}
-	
+
 	public static void move(Ship ship) {
-		for(int i=0; i<aliens.length; i++) {
-			if(aliens[i]!=null) aliens[i].move(ship);
+		for (int i = 0; i < aliens.length; i++) {
+			if (aliens[i] != null)
+				aliens[i].move(ship);
 		}
 	}
-	
+
 	public static void draw(Graphics g) {
-		for(int i=0; i<aliens.length; i++) {
-			if(aliens[i]!=null) aliens[i].draw(g);
+		for (int i = 0; i < aliens.length; i++) {
+			if (aliens[i] != null)
+				aliens[i].draw(g);
 		}
 	}
-	
+
 	public static boolean isHit(Torpedo torpedo) {
-		for(int i=0; i<aliens.length; i++) {
-			if(aliens[i]!=null) {
-				if(aliens[i].isHit(torpedo)) return true;
+		for (int i = 0; i < aliens.length; i++) {
+			if (aliens[i] != null) {
+				if (aliens[i].isHit(torpedo))
+					return true;
 			}
 		}
 		return false;
 	}
-	
+
 	public static void remove(Alien alien) {
 		boolean shouldContinue = true;
-		for(int i=0; i<aliens.length && shouldContinue; i++) {
-			if(aliens[i]==alien) {
+		for (int i = 0; i < aliens.length && shouldContinue; i++) {
+			if (aliens[i] == alien) {
 				aliens[i] = null;
 				shouldContinue = false;
 			}
 		}
 	}
-	
+
 }

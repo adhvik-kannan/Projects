@@ -8,17 +8,21 @@ public class ColorReader implements Runnable {
 
 	private Color color;
 	private Scanner scanner;
-	
+
 	public ColorReader() {
 		color = Color.BLUE;
 		scanner = new Scanner(System.in);
 	}
-	public Color getColor() { return color; }
-	
-	public void run() {
-		while(true) read();
+
+	public Color getColor() {
+		return color;
 	}
-	
+
+	public void run() {
+		while (true)
+			read();
+	}
+
 	public void read() {
 		System.out.println("Enter red, green, blue");
 		String line = scanner.nextLine();
@@ -28,5 +32,5 @@ public class ColorReader implements Runnable {
 		int blue = Integer.parseInt(st.nextToken());
 		color = new Color(red, green, blue);
 	}
-	
+
 }

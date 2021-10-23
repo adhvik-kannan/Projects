@@ -7,9 +7,8 @@ public class Cross extends TetrisObject {
 	public Cross(int x, int y, Color color) {
 		super(x, y, color);
 		formShape();
-		
-	}
 
+	}
 
 	protected void formShape() {
 		blocks = new Block[5];
@@ -18,10 +17,8 @@ public class Cross extends TetrisObject {
 		blocks[2] = new Block(1, 0, color);
 		blocks[3] = new Block(0, -1, color);
 		blocks[4] = new Block(0, 1, color);
-		
+
 		updateBlocks();
 	}
-	
 
 }
- 

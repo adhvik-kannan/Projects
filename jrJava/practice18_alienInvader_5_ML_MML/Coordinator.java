@@ -24,23 +24,23 @@ public class Coordinator {
 
 		board.addMouseListener(ship);
 		board.addMouseMotionListener(ship);
-		
-		while(!gameOver) { // while(gameOver==false) {
+
+		while (!gameOver) { // while(gameOver==false) {
 
 			board.clear();
 
 			ship.draw(g);
 
-			if(alien!=null) {
+			if (alien != null) {
 				alien.move();
 				alien.draw(g);
 			}
 
-			if(missile!=null) {
+			if (missile != null) {
 				missile.move();
 				missile.draw(g);
 			}
-			if(torpedo!=null) {
+			if (torpedo != null) {
 				torpedo.move();
 				torpedo.draw(g);
 			}

@@ -13,8 +13,8 @@ public class Bar extends TetrisObject {
 		blocks[0] = new Block(-1, 0, color);
 		blocks[1] = new Block(0, 0, color);
 		blocks[2] = new Block(1, 0, color);
-		
+
 		updateBlocks();
 	}
-	
+
 }

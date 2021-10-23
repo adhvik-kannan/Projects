@@ -16,11 +16,11 @@ public class ArrowManager {
 
 	public static void move() {
 		Arrow each;
-		for(int i=arrows.size()-1; i>=0; i--) {
+		for (int i = arrows.size() - 1; i >= 0; i--) {
 			each = arrows.get(i);
 			each.move();
 
-			if(each.getX()<0 || each.getY()>650) {
+			if (each.getX() < 0 || each.getY() > 650) {
 				arrows.remove(i);
 			}
 		}
@@ -28,7 +28,7 @@ public class ArrowManager {
 
 	public static void draw(Graphics2D g) {
 		Arrow each;
-		for(int i=0; i<arrows.size(); i++) {
+		for (int i = 0; i < arrows.size(); i++) {
 			each = arrows.get(i);
 			each.draw(g);
 		}

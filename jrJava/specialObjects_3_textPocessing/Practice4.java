@@ -14,8 +14,9 @@ public class Practice4 {
 
 		Thing thing = new Thing(10, "Hello");
 
-		//String combined = str1 + " " + 352 + " " + str2 + " " + 3.1415 + " " + str3 + " " + true;
-		//System.out.println(combined);
+		// String combined = str1 + " " + 352 + " " + str2 + " " + 3.1415 + " " + str3 +
+		// " " + true;
+		// System.out.println(combined);
 
 		StringBuilder sb = new StringBuilder();
 
@@ -42,9 +43,9 @@ public class Practice4 {
 
 		StringBuilder sb2 = new StringBuilder();
 
-		for(int i=100; i<=150; i++) {
+		for (int i = 100; i <= 150; i++) {
 			sb2.append(i);
-			if(i!=150) {
+			if (i != 150) {
 				sb2.append(" ");
 			}
 		}

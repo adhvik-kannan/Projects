@@ -25,33 +25,34 @@ public class Torpedo {
 		this.x = x;
 		this.y = y;
 		this.vy = vy;
-		if(this.vy>0) this.vy = -this.vy;
+		if (this.vy > 0)
+			this.vy = -this.vy;
 	}
 
 	public void move() {
 		y += vy;
-		
-		if(y<20) Coordinator.removeTorpedo(this);
-		
-		if(Coordinator.alien!=null) {
+
+		if (y < 20)
+			Coordinator.removeTorpedo(this);
+
+		if (Coordinator.alien != null) {
 			collided = Coordinator.alien.isHit(this);
 		}
-		if(!collided && Coordinator.missile!=null) {
+		if (!collided && Coordinator.missile != null) {
 			collided = Coordinator.missile.isHit(this);
 		}
 	}
 
 	public void draw(Graphics g) {
 		g.setColor(color);
-		g.drawRect(x-width/2, y, width, height);
-		
-		if(collided) {
+		g.drawRect(x - width / 2, y, width, height);
+
+		if (collided) {
 			g.setColor(explosionColor);
-			g.drawOval(x-explosionRadius, y-explosionRadius, 2*explosionRadius, 2*explosionRadius);
-			
+			g.drawOval(x - explosionRadius, y - explosionRadius, 2 * explosionRadius, 2 * explosionRadius);
+
 			Coordinator.removeTorpedo(this);
 		}
 	}
-
 
 }

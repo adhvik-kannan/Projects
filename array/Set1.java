@@ -1,4 +1,4 @@
-package array_homework;
+package array;
 
 public class Set1 {
 

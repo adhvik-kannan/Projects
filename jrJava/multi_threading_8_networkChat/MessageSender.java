@@ -12,8 +12,6 @@ public class MessageSender {
 		pw = new PrintWriter(os);
 	}
 
-
-
 	public void send(String msg) {
 		pw.println(msg);
 		pw.flush();
@@ -21,11 +19,3 @@ public class MessageSender {
 	}
 
 }
-
-
-
-
-
-
-
-

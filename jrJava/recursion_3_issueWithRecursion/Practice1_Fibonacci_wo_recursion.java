@@ -6,19 +6,21 @@ public class Practice1_Fibonacci_wo_recursion {
 		long startTime = System.currentTimeMillis();
 		System.out.println(fibo(50));
 		long endTime = System.currentTimeMillis();
-		System.out.println(endTime-startTime);
+		System.out.println(endTime - startTime);
 	}
-	
+
 	public static long fibo(int n) {
-		
+
 		long first = 1;
 		long second = 1;
-		
-		if(n==1) return first;
-		else if(n==2) return second;
-		
+
+		if (n == 1)
+			return first;
+		else if (n == 2)
+			return second;
+
 		long third = 0;
-		for(int i=3; i<=n; i++) {
+		for (int i = 3; i <= n; i++) {
 			third = first + second;
 			first = second;
 			second = third;

@@ -4,10 +4,12 @@ public class BankB {
 
 	private double balance = 0;
 
-	public double getBalance() { return balance; }
+	public double getBalance() {
+		return balance;
+	}
 
-	public void deposit(double amount) { 
+	public void deposit(double amount) {
 		System.out.println("I am being deposited $" + amount);
-		balance += amount; 
+		balance += amount;
 	}
 }

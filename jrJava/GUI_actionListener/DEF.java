@@ -12,10 +12,10 @@ public class DEF implements ActionListener {
 	// method1(){ }
 	// method2(){ }
 	// ....
-	
+
 	public void actionPerformed(ActionEvent e) {
 		// ...
 		System.out.println(("I am DEF. I just sold 2500 Facebook stocks"));
 	}
-	
+
 }

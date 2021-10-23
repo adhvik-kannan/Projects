@@ -23,23 +23,23 @@ public class Coordinator {
 		alien = new Alien(300, 0, Color.GREEN, Color.BLACK, 1, 4);
 
 		board.getJFrame().addKeyListener(ship);
-		
-		while(!gameOver) { 
+
+		while (!gameOver) {
 
 			board.clear();
 
 			ship.draw(g);
 
-			if(alien!=null) {
+			if (alien != null) {
 				alien.move();
 				alien.draw(g);
 			}
 
-			if(missile!=null) {
+			if (missile != null) {
 				missile.move();
 				missile.draw(g);
 			}
-			if(torpedo!=null) {
+			if (torpedo != null) {
 				torpedo.move();
 				torpedo.draw(g);
 			}

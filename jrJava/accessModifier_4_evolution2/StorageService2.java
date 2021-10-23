@@ -2,21 +2,20 @@ package jrJava.accessModifier_4_evolution2;
 
 public class StorageService2 {
 
-	private  int[] data = new int[100];
-	
-	
+	private int[] data = new int[100];
+
 	public void addData(int index, int aData) {
-		data[index-1] = aData;
+		data[index - 1] = aData;
 	}
-	
+
 	public int getData(int index) {
-		return data[index-1];
+		return data[index - 1];
 	}
-	
+
 	public int sum() {
 		int sum = 0;
-		for(int i=0; i<data.length; i++) sum += data[i];
+		for (int i = 0; i < data.length; i++)
+			sum += data[i];
 		return sum;
 	}
 }
- 

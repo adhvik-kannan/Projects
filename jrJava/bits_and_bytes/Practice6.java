@@ -6,17 +6,18 @@ public class Practice6 {
 
 		int a = -1014432356;
 		printBinary(a);
-		
+
 		int b = a >> 3;
 		printBinary(b);
-		
+
 		int c = a >>> 3;
 		printBinary(c);
 	}
 
 	public static void printBinary(int value) {
 		String binaryString = Integer.toBinaryString(value);
-		for(int i=0; i<32-binaryString.length(); i++) System.out.print('0');
+		for (int i = 0; i < 32 - binaryString.length(); i++)
+			System.out.print('0');
 		System.out.println(binaryString);
 	}
 }

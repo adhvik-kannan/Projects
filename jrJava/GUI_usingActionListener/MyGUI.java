@@ -6,13 +6,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class MyGUI implements ActionListener{
+public class MyGUI implements ActionListener {
 
 	private static JFrame frame;
 	private static MyPanel panel;
 	private static MyButton button;
 	private JButton redB, greenB, blueB, multiB;
-
 
 	public MyGUI() {
 		frame = new JFrame("Extending component");
@@ -53,19 +52,16 @@ public class MyGUI implements ActionListener{
 
 	public void actionPerformed(ActionEvent e) {
 
-		if(e.getSource()==redB) {
+		if (e.getSource() == redB) {
 			panel.useSingleColor(Color.RED);
 			button.useSingleColor(Color.RED);
-		}
-		else if(e.getSource()==greenB) {
+		} else if (e.getSource() == greenB) {
 			panel.useSingleColor(Color.GREEN);
 			button.useSingleColor(Color.GREEN);
-		}
-		else if(e.getSource()==blueB) {
+		} else if (e.getSource() == blueB) {
 			panel.useSingleColor(Color.BLUE);
 			button.useSingleColor(Color.BLUE);
-		}
-		else if(e.getSource()==multiB) {
+		} else if (e.getSource() == multiB) {
 			panel.useSingleColor(null);
 			button.useSingleColor(null);
 		}
@@ -76,12 +72,14 @@ public class MyGUI implements ActionListener{
 
 		try {
 			Thread.sleep(1000);
-		} catch (InterruptedException e) { }
+		} catch (InterruptedException e) {
+		}
 
-		while(true) {
+		while (true) {
 			try {
 				Thread.sleep(50);
-			} catch (InterruptedException e) {}
+			} catch (InterruptedException e) {
+			}
 			panel.moveCircle();
 			button.moveCircle();
 			panel.repaint();
@@ -89,10 +87,3 @@ public class MyGUI implements ActionListener{
 	}
 
 }
-
-
-
-
-
-
-

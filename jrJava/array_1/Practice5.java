@@ -11,7 +11,7 @@ public class Practice5 {
 		balls[2] = new Ball(150, 150);
 		balls[3] = new Ball(200, 200);
 
-		for(int i=0; i<balls.length; i++) {
+		for (int i = 0; i < balls.length; i++) {
 			System.out.println(balls[i].getDistance());
 		}
 	}

@@ -17,17 +17,17 @@ public class CreateMapFromFile {
 
 	private static Map<String, Integer> createMap(String line) {
 		Map<String, Integer> map = new HashMap<String, Integer>();
-		
+
 		StringTokenizer st = new StringTokenizer(line, ",");
 		String token;
 		int equalSignPos;
 		String key;
 		Integer value;
-		while(st.hasMoreTokens()) {
+		while (st.hasMoreTokens()) {
 			token = st.nextToken();
-			equalSignPos = token.indexOf('=');	
+			equalSignPos = token.indexOf('=');
 			key = token.substring(0, equalSignPos).trim();
-			value = Integer.parseInt(token.substring(equalSignPos+1).trim());
+			value = Integer.parseInt(token.substring(equalSignPos + 1).trim());
 			map.put(key, value);
 		}
 		return map;

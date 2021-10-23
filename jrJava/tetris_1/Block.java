@@ -9,33 +9,26 @@ public class Block {
 	private int xRel, yRel;
 	private int x, y; // DrawingBoard coordinate.
 	private Color color;
-	
+
 	static {
 		SIZE = 20;
 	}
-	
+
 	public Block(int xRel, int yRel, Color color) {
 		this.xRel = xRel;
 		this.yRel = yRel;
 		this.color = color;
 	}
-	
+
 	public void updatePosition(int tetrisX, int tetrisY) {
-		x = tetrisX + xRel*SIZE;
-		y = tetrisY + yRel*SIZE;
+		x = tetrisX + xRel * SIZE;
+		y = tetrisY + yRel * SIZE;
 	}
-	
+
 	public void draw(Graphics g) {
 		g.setColor(color);
-		g.fillRect(x, y, SIZE, SIZE); 
+		g.fillRect(x, y, SIZE, SIZE);
 		g.setColor(Color.BLACK);
-		g.drawRect(x, y, SIZE, SIZE); 
+		g.drawRect(x, y, SIZE, SIZE);
 	}
 }
-
-
-
-
-
-
-

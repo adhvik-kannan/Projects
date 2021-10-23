@@ -24,47 +24,59 @@ public class Coordinator {
 
 		board.addMouseMotionListener(ship);
 		board.getJFrame().addKeyListener(ship);
-		
-		while(!gameOver) { 
-			
+
+		while (!gameOver) {
+
 			board.clear();
 
 			ship.draw(g);
 
-			if(alien!=null) {
+			if (alien != null) {
 				alien.move();
 				alien.draw(g);
 			}
 
-			if(missile!=null) {
+			if (missile != null) {
 				missile.move();
 				missile.draw(g);
 			}
-			
-			if(torpedo1!=null) torpedo1.move();
-			if(torpedo1!=null) torpedo1.draw(g);
-			
-			if(torpedo2!=null) torpedo2.move();
-			if(torpedo2!=null) torpedo2.draw(g);
-			
-			if(torpedo3!=null) torpedo3.move();
-			if(torpedo3!=null) torpedo3.draw(g);
-			
+
+			if (torpedo1 != null)
+				torpedo1.move();
+			if (torpedo1 != null)
+				torpedo1.draw(g);
+
+			if (torpedo2 != null)
+				torpedo2.move();
+			if (torpedo2 != null)
+				torpedo2.draw(g);
+
+			if (torpedo3 != null)
+				torpedo3.move();
+			if (torpedo3 != null)
+				torpedo3.draw(g);
+
 			board.repaint();
 			timer.pause(50);
 		}
 	}
-	
+
 	public static void addTorpedo(Torpedo torpedo) {
-		if(torpedo1==null) torpedo1 = torpedo;
-		else if(torpedo2==null) torpedo2 = torpedo;
-		else if(torpedo3==null) torpedo3 = torpedo;
+		if (torpedo1 == null)
+			torpedo1 = torpedo;
+		else if (torpedo2 == null)
+			torpedo2 = torpedo;
+		else if (torpedo3 == null)
+			torpedo3 = torpedo;
 	}
-	
+
 	public static void removeTorpedo(Torpedo torpedo) {
-		if(torpedo1==torpedo) torpedo1 = null;
-		else if(torpedo2==torpedo) torpedo2 = null;
-		else if(torpedo3==torpedo) torpedo3 = null;
+		if (torpedo1 == torpedo)
+			torpedo1 = null;
+		else if (torpedo2 == torpedo)
+			torpedo2 = null;
+		else if (torpedo3 == torpedo)
+			torpedo3 = null;
 	}
 
 }

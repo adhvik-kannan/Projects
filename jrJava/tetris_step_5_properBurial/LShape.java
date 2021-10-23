@@ -14,8 +14,8 @@ public class LShape extends TetrisObject {
 		blocks[1] = new Block(-1, 0, color);
 		blocks[2] = new Block(0, 0, color);
 		blocks[3] = new Block(0, 1, color);
-		
+
 		updateBlocks();
 	}
-	
+
 }

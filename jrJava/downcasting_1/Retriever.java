@@ -5,7 +5,9 @@ public class Retriever extends Dog {
 	public void move() {
 		System.out.println("I am a dog, but I can swim");
 	}
-	
-	public void rescueChild(){ System.out.println("I can rescue a child"); }
-	
+
+	public void rescueChild() {
+		System.out.println("I can rescue a child");
+	}
+
 }

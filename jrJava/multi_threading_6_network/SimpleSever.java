@@ -9,13 +9,13 @@ import java.util.Scanner;
 public class SimpleSever {
 
 	public static void main(String[] args) throws IOException {
-		
+
 		ServerSocket ss = new ServerSocket(5454);
 		Socket s = ss.accept();
-		
+
 		InputStream is = s.getInputStream();
 		Scanner scanner = new Scanner(is);
-		
+
 		String line = scanner.nextLine();
 		System.out.println("Server: " + line);
 		is.close();
