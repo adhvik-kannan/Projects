@@ -1,0 +1,1 @@
+English=89,  Math = 89,PE=  77   , Java  =100, Biology=90

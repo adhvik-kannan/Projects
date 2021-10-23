@@ -1,0 +1,12 @@
+Emma Watson 12 Programmer2 2013 99500 1994 4 12 F 
+Robert Downey 44 Jr.Developer 2004 95000 1986 10 28 M 
+Mila Kunis 91 Reception 2013 89600 1985 3 29 F 
+Ryan Gosling 25 Janitor2 2012 69250 1989 8 14 M 
+Jennifer Lawrence 21 Developer3 1998 147000 1986 3 3 F 
+Kate Winslet 95 Programmer2 2009 110100 1985 8 1 F 
+Jennifer Aniston 24 Sr.Manager 2002 169500 1997 10 17 F 
+Penelope Cruz 14 Sr.Programmer 2010 99500 1981 2 9 F 
+Dan Stevens 27 Programmer1 2006 92000 1981 10 4 M 
+Pom Klementieff 81 Director 2009 99000 1983 6 15 F 
+Emilia Clarke 88 Developer 2011 112000 1992 3 21 F 
+Gal Gadot 67 Manager 2013 108000 1995 11 7 F 
