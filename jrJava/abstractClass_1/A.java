@@ -1,4 +1,4 @@
-package abstractClass_1;
+package jrJava.abstractClass_1;
 
 public abstract class A {
 

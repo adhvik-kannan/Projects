@@ -1,4 +1,4 @@
-package abstractType_stack;
+package jrJava.abstractType_stack;
 
 public class MyStack {
 
